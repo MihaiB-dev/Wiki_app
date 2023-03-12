@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block body %}
+    <h1>Search Results</h1>
+    <p>We didn't find what you want, but here are some results for <span style ="font-weight: bold;">'{{ search }}'</span>:</p>
+    <ul>
+        {% for result in results %}
+            <li><a href="{% url 'search' title=result%}">{{ result }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
